@@ -77,7 +77,6 @@ public class TipocertificadoController {
 	public String updatePerson(Tipocertificado tipocertificado)
 	{
 		tcdService.Update(tipocertificado);
-		return "redirect:/tipocertificadoss/listar";
-		
+		return "redirect:/tipocertificadoss/listar";		
 	}
 }
