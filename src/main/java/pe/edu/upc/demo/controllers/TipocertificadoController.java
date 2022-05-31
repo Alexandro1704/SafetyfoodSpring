@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import pe.edu.upc.demo.entities.Tipocertificado;
-import pe.edu.upc.demo.serviceinteface.ITipocertificadoService;
+import pe.edu.upc.demo.serviceinterface.ITipocertificadoService;
 
 
 @Controller

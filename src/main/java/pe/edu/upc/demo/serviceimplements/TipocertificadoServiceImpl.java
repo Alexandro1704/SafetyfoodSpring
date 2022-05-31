@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import pe.edu.upc.demo.entities.Tipocertificado;
 import pe.edu.upc.demo.repositories.ITipocertificadoRepository;
-import pe.edu.upc.demo.serviceinteface.ITipocertificadoService;
+import pe.edu.upc.demo.serviceinterface.ITipocertificadoService;
 
 @Service
 public class TipocertificadoServiceImpl implements ITipocertificadoService{
