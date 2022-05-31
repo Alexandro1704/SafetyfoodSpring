@@ -1,4 +1,4 @@
-package pe.edu.upc.demo.entities.serviceimplements;
+package pe.edu.upc.demo.serviceimplements;
 import java.util.List;
 import java.util.Optional;
 
