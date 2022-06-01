@@ -13,8 +13,8 @@
 	<header th:fragment="header">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"> 
-				<img alt=""	th:src="@{/images/logo.jpg}" width="80" height="50">
+				<a class="navbar-brand" href="#"> <img alt=""
+					th:src="@{/images/logo.jpg}" width="80" height="50">
 				</a>
 
 
@@ -34,19 +34,33 @@
 							data-bs-toggle="dropdown" aria-expanded="false">Departamento</a>
 							<ul class="dropdown-menu"
 								aria-labelledby="navbarDropdownMenuLink">
-								<li><a class="dropdown-item" th:href="@{/departamentoss/nuevo}">Registrar</a></li>
-								<li><a class="dropdown-item" th:href="@{/departamentoss/listar}">Listar</a></li>
+								<li><a class="dropdown-item"
+									th:href="@{/departamentoss/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item"
+									th:href="@{/departamentoss/listar}">Listar</a></li>
 
 							</ul></li>
-							
-							<li class="nav-item dropdown"><a
+
+						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" href="#"
 							id="navbarDropdownMenuLink" role="button"
 							data-bs-toggle="dropdown" aria-expanded="false">Distrito</a>
 							<ul class="dropdown-menu"
 								aria-labelledby="navbarDropdownMenuLink">
 								<li><a class="dropdown-item" th:href="@{/distritoss/nuevo}">Registrar</a></li>
-								<li><a class="dropdown-item" th:href="@{/distritoss/listar}">Listar</a></li>
+								<li><a class="dropdown-item"
+									th:href="@{/distritoss/listar}">Listar</a></li>
+
+							</ul></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#"
+							id="navbarDropdownMenuLink" role="button"
+							data-bs-toggle="dropdown" aria-expanded="false">Tipocertificado</a>
+							<ul class="dropdown-menu"
+								aria-labelledby="navbarDropdownMenuLink">
+								<li><a class="dropdown-item" th:href="@{/tipocertificadoss/nuevo}">Registrar</a></li>
+								<li><a class="dropdown-item"
+									th:href="@{/tipocertificadoss/listar}">Listar</a></li>
 
 							</ul></li>
 					</ul>
