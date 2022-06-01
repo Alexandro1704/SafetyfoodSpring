@@ -70,14 +70,14 @@ public class TipocertificadoController {
 	@RequestMapping("irmodificar/{id}")
 	public String goUpdateTipocertificado(@PathVariable int id, Model model)
 	{
-		Optional<Tipocertificado>objTip=tcdService.listId(id);
-		model.addAttribute( "ttd",objTip.get());
+		Optional<Tipocertificado>objTcd=tcdService.listId(id);
+		model.addAttribute( "ttd",objTcd.get());
 		return "/tipocertificado/frmUpdatetipocertificado";
 	}
 	@PostMapping("modificar")
-	public String updateTipocertificado(Tipocertificado tipocertificado)
+	public String updateTipocertificado(Tipocertificado tc)
 	{
-		tcdService.Update(tipocertificado);
+		tcdService.update(tc);
 		return "redirect:/tipocertificadoss/listar";		
 	}
 }
