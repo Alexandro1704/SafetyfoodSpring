@@ -29,6 +29,7 @@ public class TipocertificadoController {
 	public String newTipocertificado(Model model) {
 		model.addAttribute("p",new Tipocertificado());
 		return "tipocertificado/frmRegistertipocertificado";
+		
 	}
 	@PostMapping("/guardar")
 	public String saveTipocertificado(@Valid Tipocertificado tc, BindingResult binRes, Model model) {
