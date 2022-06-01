@@ -72,7 +72,7 @@ public class TipocertificadoController {
 	{
 		Optional<Tipocertificado>objTip=tcdService.listId(id);
 		model.addAttribute( "ttd",objTip.get());
-		return "/person/frmUpdatetipocertificado";
+		return "/tipocertificado/frmUpdatetipocertificado";
 	}
 	@PostMapping("modificar")
 	public String updateTipocertificado(Tipocertificado tipocertificado)
