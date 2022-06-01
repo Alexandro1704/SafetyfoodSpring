@@ -39,7 +39,7 @@ public class TipocertificadoServiceImpl implements ITipocertificadoService{
 	}
 
 	@Override
-	public void Update(Tipocertificado tipocertificado) {
+	public void update(Tipocertificado tipocertificado) {
 		// TODO Auto-generated method stub
 		tipocertificadoRepository.save(tipocertificado);
 	}
