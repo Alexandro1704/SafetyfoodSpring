@@ -13,7 +13,7 @@ public class Tipocertificado {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idTipocertificado;
-	@Column(name = "tipocertificado", length = 35, nullable = false)
+	@Column(name = "tipocertificado", length = 20, nullable = false)
 	private String tipocertificado;
 	@Column(name = "nombretipocertificado", length = 35, nullable = false)
 	private String nombretipocertificado;

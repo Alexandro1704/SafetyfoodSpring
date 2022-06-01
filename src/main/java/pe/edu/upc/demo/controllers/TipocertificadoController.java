@@ -27,7 +27,7 @@ public class TipocertificadoController {
 	
 	@GetMapping("/nuevo")
 	public String newTipocertificado(Model model) {
-		model.addAttribute("p",new Tipocertificado());
+		model.addAttribute("tt",new Tipocertificado());
 		return "tipocertificado/frmRegistertipocertificado";
 		
 	}
@@ -68,14 +68,14 @@ public class TipocertificadoController {
 		return "tipocertificado/frmListtipocertificado";
 	}
 	@RequestMapping("irmodificar/{id}")
-	public String goUpdatePerson(@PathVariable int id, Model model)
+	public String goUpdateTipocertificado(@PathVariable int id, Model model)
 	{
-		Optional<Tipocertificado>objPer=tcdService.listId(id);
-		model.addAttribute( "psa",objPer.get());
-		return "/person/frmUpdate";
+		Optional<Tipocertificado>objTip=tcdService.listId(id);
+		model.addAttribute( "ttd",objTip.get());
+		return "/person/frmUpdatetipocertificado";
 	}
 	@PostMapping("modificar")
-	public String updatePerson(Tipocertificado tipocertificado)
+	public String updateTipocertificado(Tipocertificado tipocertificado)
 	{
 		tcdService.Update(tipocertificado);
 		return "redirect:/tipocertificadoss/listar";		
