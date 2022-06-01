@@ -14,5 +14,5 @@ public interface ITipocertificadoService {
 
 	Optional<Tipocertificado> listId(int idTipocertificado);
 
-	public void Update(Tipocertificado tipocertificado);
+	public void update(Tipocertificado tipocertificado);
 }
