@@ -14,10 +14,11 @@ public class TipocertificadoServiceImpl implements ITipocertificadoService{
 
 	@Autowired
 	private ITipocertificadoRepository tipocertificadoRepository;
+	
 	@Override
 	public void insert(Tipocertificado tipocertificado) {
-		// TODO Auto-generated method stub
 		tipocertificadoRepository.save(tipocertificado);
+		
 	}
 
 	@Override
@@ -43,5 +44,7 @@ public class TipocertificadoServiceImpl implements ITipocertificadoService{
 		// TODO Auto-generated method stub
 		tipocertificadoRepository.save(tipocertificado);
 	}
+
+	
 
 }
