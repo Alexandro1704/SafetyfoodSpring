@@ -8,31 +8,30 @@
 
 	<header th:replace="master/master :: header"></header>
 	<br>
-
+	
 	<div class="container">
 		<div>
-			<form th:action="@{/tipocertificadoss/modificar}" method="post"
-				th:object="${ttd}">
+			<form th:action="@{/tipocertificadoss/guardar}" 
+			method="post" th:object="${ttd}">
 				<div class="col-sm-12">
-					<label class="form-label">Id: </label> <input type="text"
-						class="form-control" th:field="*{idTipocertificado}"></input>
+					<label class="form-label">Id: </label> 
+				    <input type="text" class="form-control"
+						th:field="*{idTipocertificado}"></input>
 				</div>
 				<div class="col-sm-12">
-					<label class="form-label">Tipo de certificado:</label> <input
-						type="text" class="form-control" required pattern="[a-zA-z]+"
-						maxlength="20" title="Tipo de certificado no valido"
-						th:field="*{tipocertificado}"></input>
+					<label class="form-label">Tipocertificado:</label> 
+					<input type="text" class="form-control" required pattern="[a-zA-z]+" title="Distrito no valido"
+						th:field="*{typecertificado}"></input>
 				</div>
 				<div class="col-sm-12">
-					<label class="form-label">Nombre del Certificado:</label> <input
-						type="text" class="form-control" required pattern="[a-zA-z]+"
-						maxlength="35" title="Nombre del certificado no valido"
+					<label class="form-label">Nombre del certificado:</label> 
+					<input type="text" class="form-control" required pattern="[a-zA-z]+" title="Distrito no valido"
 						th:field="*{nombretipocertificado}"></input>
 				</div>
-
 				<br>
 				<div class="col-sm-12">
-					<input type="submit" class="btn btn-dark" value="Actualizar"></input>
+					<input type="submit" 
+					class="btn btn-dark" value="Actualizar" ></input>
 				</div>
 
 			</form>

@@ -17,7 +17,7 @@
 					<thead>
 						<tr>
 							<th>Id</th>
-							<th>Tipo de certificado</th>
+							<th>Tipo certificado</th>
 							<th>Nombre del certificado</th>
 						</tr>
 					</thead>
@@ -25,7 +25,7 @@
 					<tbody>
 						<tr th:each="tt:${listaTipocertificados}">
 							<td th:text="${tt.idTipocertificado}"></td>
-							<td th:text="${tt.tipocertificado}"></td>
+							<td th:text="${tt.typecertificado}"></td>
 							<td th:text="${tt.nombretipocertificado}"></td>
 							<td> 
 							<a th:href="@{/tipocertificadoss/eliminar?id=}+${tt.idTipocertificado}">
