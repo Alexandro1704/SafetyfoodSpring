@@ -18,66 +18,57 @@ import org.springframework.web.bind.annotation.RequestParam;
 import pe.edu.upc.demo.entities.Tipocertificado;
 import pe.edu.upc.demo.serviceinterface.ITipocertificadoService;
 
-
 @Controller
 @RequestMapping("/tipocertificadoss")
 public class TipocertificadoController {
 	@Autowired
-	private ITipocertificadoService tcdService;
-	
+	private ITipocertificadoService tipService;
+
 	@GetMapping("/nuevo")
 	public String newTipocertificado(Model model) {
-		model.addAttribute("tt",new Tipocertificado());
+		model.addAttribute("tt", new Tipocertificado());
 		return "tipocertificado/frmRegistertipocertificado";
-		
 	}
+
 	@PostMapping("/guardar")
 	public String saveTipocertificado(@Valid Tipocertificado tc, BindingResult binRes, Model model) {
-		if(binRes.hasErrors()) {
-			model.addAttribute("error","Ocurrio un error!!");
-			return "tipocertificado/frmRegistertipocertificado";
-		}
-		else {
-			tcdService.insert(tc);
-			model.addAttribute("mensaje","Se guardo correctamente!!");
+			tipService.insert(tc);
+			model.addAttribute("mensaje", "Se guardó correctamente!!");
 			return "redirect:/tipocertificadoss/nuevo";
-		}		
-	}
+		}
 	@GetMapping("/listar")
-	public String ListTipocertificado(Model model) {
+	public String listTipocertificado(Model model) {
 		try {
-			model.addAttribute("listaTipocertificados",tcdService.list());
+			model.addAttribute("listaTipocertificados", tipService.list());
 		} catch (Exception e) {
-			// TODO: handle exception
-			model.addAttribute("error",e.getMessage());
-		}		
-		return "tipocertificado/frmListtipocertificado";
+			model.addAttribute("error", e.getMessage());
+		}
+		return "/tipocertificado/frmListtipocertificado";
 	}
 	@RequestMapping("/eliminar")
-	public String deleteTipocertificado(Map<String,Object>model,@RequestParam(value="id")Integer id)
-	{
+	public String deleteTipocertificado(Map<String, Object> model, @RequestParam(value ="id") Integer id) {
 		try {
 			if (id!=null && id>0) {
-				tcdService.delete(id);
-				model.put("listaTipocertificados", tcdService.list());
+				tipService.delete(id);
+				model.put("listaTipocertificados", tipService.list());
 			}
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch(Exception e) {
 			model.put("error", e.getMessage());
 		}
 		return "tipocertificado/frmListtipocertificado";
+		
 	}
+	
 	@RequestMapping("irmodificar/{id}")
-	public String goUpdateTipocertificado(@PathVariable int id, Model model)
-	{
-		Optional<Tipocertificado>objTcd=tcdService.listId(id);
-		model.addAttribute( "ttd",objTcd.get());
-		return "/tipocertificado/frmUpdatetipocertificado";
+	public String goUpdateTipocertificado(@PathVariable int id, Model model) {
+		Optional<Tipocertificado> objTip = tipService.listId(id);
+		model.addAttribute("ttd", objTip.get());
+		return "tipocertificado/frmUpdatetipocertificado";	
 	}
-	@PostMapping("modificar")
-	public String updateTipocertificado(Tipocertificado tc)
-	{
-		tcdService.update(tc);
-		return "redirect:/tipocertificadoss/listar";		
+	
+	@PostMapping("/modificar")
+	public String updateTipocertificado(Tipocertificado tc) {
+		tipService.update(tc);
+		return "redirect:/tipocertificadoss/listar";	
 	}
 }

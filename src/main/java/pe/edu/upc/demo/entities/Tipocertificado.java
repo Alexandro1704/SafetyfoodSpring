@@ -13,37 +13,48 @@ public class Tipocertificado {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idTipocertificado;
-	@Column(name = "tipocertificado", length = 20, nullable = false)
-	private String tipocertificado;
-	@Column(name = "nombretipocertificado", length = 35, nullable = false)
+
+	@Column(name = "typecertificado", nullable = false, length = 20)
+	private String typecertificado;
+	
+	@Column(name = "nombretipocertificado", nullable = false, length = 20)
 	private String nombretipocertificado;
+
+	
 	public Tipocertificado() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Tipocertificado(int idTipocertificado, String tipocertificado, String nombretipocertificado) {
+
+	public Tipocertificado(int idTipocertificado, String typecertificado, String nombretipocertificado) {
 		super();
 		this.idTipocertificado = idTipocertificado;
-		this.tipocertificado = tipocertificado;
+		this.typecertificado = typecertificado;
 		this.nombretipocertificado = nombretipocertificado;
 	}
+
 	public int getIdTipocertificado() {
 		return idTipocertificado;
 	}
+
 	public void setIdTipocertificado(int idTipocertificado) {
 		this.idTipocertificado = idTipocertificado;
 	}
-	public String getTipocertificado() {
-		return tipocertificado;
+
+	public String getTypecertificado() {
+		return typecertificado;
 	}
-	public void setTipocertificado(String tipocertificado) {
-		this.tipocertificado = tipocertificado;
+
+	public void setTypecertificado(String typecertificado) {
+		this.typecertificado = typecertificado;
 	}
+	
 	public String getNombretipocertificado() {
 		return nombretipocertificado;
 	}
+
 	public void setNombretipocertificado(String nombretipocertificado) {
 		this.nombretipocertificado = nombretipocertificado;
 	}
-	
+
 }
