@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+	<br>
+	
+	<div class="container">
+		<div>
+			<form th:action="@{/tiporestaurantess/guardar}" 
+			method="post" th:object="${trr}">
+				<div class="col-sm-12">
+					<label class="form-label">Id: </label> 
+				    <input type="text" class="form-control"
+						th:field="*{idTiporestaurante}"></input>
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Tiporestaurante:</label> 
+					<input type="text" class="form-control" required maxlength="20"  title="Tiporestaurante no valido"
+						th:field="*{typerestaurante}"></input>
+				</div>
+			
+				<br>
+				<div class="col-sm-12">
+					<input type="submit" 
+					class="btn btn-dark" value="Actualizar" ></input>
+				</div>
+
+			</form>
+		</div>
+
+	</div>
+
+
+</body>
+</html>
