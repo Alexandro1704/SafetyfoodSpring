@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<header th:replace="master/master :: header"></header>
+	<br>
+	
+	<div class="container">
+		<div>
+			<div class="table-responsive">
+				<table class="table table-white">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Tipo de restaurante</th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr th:each="tr:${listaTiporestaurantes}">
+							<td th:text="${tr.idTiporestaurante}"></td>
+							<td th:text="${tr.typerestaurante}"></td>
+							
+							<td> 
+							<a th:href="@{/tiporestaurantess/eliminar?id=}+${tr.idTiporestaurante}">
+							Eliminar</a></td>
+							<td>
+							<a th:href="@{'/tiporestaurantess/irmodificar/'+${tr.idTiporestaurante}}">
+							Actualizar</a></td>							
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
